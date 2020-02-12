@@ -9,7 +9,7 @@ source:
   sha256: 4265c9a5e1bbdb0e1a31c69985e4a9560d301c2486a342772caad6882108dd4b
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
@@ -20,7 +20,7 @@ requirements:
     - setuptools
   run:
     - gpstime
-    - matplotlib
+    - matplotlib-base
     - numpy
     - pyqtgraph
     - python
