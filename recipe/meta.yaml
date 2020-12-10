@@ -1,14 +1,17 @@
-{% set version = "0.7.9" %}
+{% set name = "ndscope" %}
+{% set version = "0.9.1" %}
 
 package:
   name: ndscope
   version: {{ version }}
 
 source:
-  url: https://git.ligo.org/cds/ndscope/-/archive/{{ version }}/ndscope-{{ version }}.tar.gz
-  sha256: 4265c9a5e1bbdb0e1a31c69985e4a9560d301c2486a342772caad6882108dd4b
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: ab48a554012a5362f48941732a169b3eeed886b0ecacce10f1473f078b929a28
 
 build:
+  entry_points:
+    - ndscope = ndcope.__main__:main
   number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
