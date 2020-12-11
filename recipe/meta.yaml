@@ -12,7 +12,7 @@ source:
 build:
   entry_points:
     - ndscope = ndcope.__main__:main
-  number: 1
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
@@ -63,4 +63,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - duncanmmacleod
     - jrollins
