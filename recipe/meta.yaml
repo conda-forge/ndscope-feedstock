@@ -11,7 +11,7 @@ source:
 
 build:
   entry_points:
-    - ndscope = ndcope.__main__:main
+    - ndscope = ndscope.__main__:main
   number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
@@ -21,8 +21,11 @@ requirements:
     - pip
     - python
     - setuptools
+    - setuptools-scm
   run:
+    - cairosvg
     - gpstime
+    - h5py
     - matplotlib-base
     - numpy
     - pyqtgraph
