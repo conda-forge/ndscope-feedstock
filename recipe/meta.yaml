@@ -36,10 +36,12 @@ requirements:
 
 test:
   requires:
+    - pip
     - pytest
   imports:
     - ndscope
   commands:
+    - pip check
     - python -m pytest --pyargs ndscope
     - ndscope --help
 
