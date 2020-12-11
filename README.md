@@ -5,9 +5,11 @@ Home: https://git.ligo.org/cds/ndscope
 
 Package license: GPL-3.0-or-later
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ndscope-feedstock/blob/master/LICENSE.txt)
 
 Summary: Next-generation NDS oscilloscope
+
+Development: https://git.ligo.org/cds/ndscope
 
 View time series data of channels from LIGO network data servers
 (NDS) with an intuitive GUI interface.  Features include:
@@ -125,5 +127,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@duncanmmacleod](https://github.com/duncanmmacleod/)
 * [@jrollins](https://github.com/jrollins/)
 
