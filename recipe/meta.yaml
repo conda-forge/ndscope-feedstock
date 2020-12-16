@@ -1,5 +1,5 @@
 {% set name = "ndscope" %}
-{% set version = "0.9.1" %}
+{% set version = "0.9.2" %}
 
 package:
   name: ndscope
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ab48a554012a5362f48941732a169b3eeed886b0ecacce10f1473f078b929a28
+  sha256: 0e07429287a9ceebbf8f31f1135d793175a26becbd810134edb2b0be92e5816f
 
 build:
   entry_points:
     - ndscope = ndscope.__main__:main
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
@@ -56,15 +56,15 @@ about:
   license_file: COPYING
   summary: Next-generation NDS oscilloscope
   description: |
-     View time series data of channels from LIGO network data servers
-     (NDS) with an intuitive GUI interface.  Features include:
-     * online and offline data viewing
-     * intuitive mouse gestures for pan and zoom
-     * auto-retrieval of new data as the time range expands
-     * auto-switching from raw data to second/minute trends depending
-       on time scale
-     * supports both NDS1 and NDS2 protocols, for viewing both in
-       LIGO/Kagra control rooms as well as anywhere else in the world
+    View time series data of channels from LIGO network data servers
+    (NDS) with an intuitive GUI interface.  Features include:
+    * online and offline data viewing
+    * intuitive mouse gestures for pan and zoom
+    * auto-retrieval of new data as the time range expands
+    * auto-switching from raw data to second/minute trends depending
+      on time scale
+    * supports both NDS1 and NDS2 protocols, for viewing both in
+      LIGO/Kagra control rooms as well as anywhere else in the world
 
 extra:
   recipe-maintainers:
