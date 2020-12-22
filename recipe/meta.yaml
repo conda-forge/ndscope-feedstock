@@ -1,5 +1,5 @@
 {% set name = "ndscope" %}
-{% set version = "0.9.2" %}
+{% set version = "0.10.0" %}
 
 package:
   name: ndscope
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0e07429287a9ceebbf8f31f1135d793175a26becbd810134edb2b0be92e5816f
+  sha256: b28e3975d3eed3d85177f4d5ed8d663ab68a6b38a19facd593fcc055e7897212
 
 build:
   entry_points:
