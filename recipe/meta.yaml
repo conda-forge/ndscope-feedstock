@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >= 3.7
     - setuptools
     - setuptools-scm
   run:
@@ -29,7 +29,7 @@ requirements:
     - matplotlib-base
     - numpy
     - pyqtgraph
-    - python
+    - python >= 3.7
     - python-dateutil
     - python-nds2-client
     - pyyaml
