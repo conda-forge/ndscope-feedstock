@@ -12,14 +12,15 @@ source:
 build:
   entry_points:
     - ndscope = ndscope.__main__:main
-  number: 0
+    - ndschans = ndscope.channel_select:main
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.7
     - setuptools
     - setuptools-scm
   run:
@@ -29,7 +30,7 @@ requirements:
     - matplotlib-base
     - numpy
     - pyqtgraph
-    - python
+    - python >=3.7
     - python-dateutil
     - python-nds2-client
     - pyyaml
@@ -47,6 +48,7 @@ test:
     - pip check
     - python -m pytest --pyargs ndscope
     - ndscope --help
+    - ndschans --help
 
 about:
   home: https://git.ligo.org/cds/ndscope
