@@ -48,6 +48,7 @@ test:
     - pip check
     - python -m pytest --pyargs ndscope
     - ndscope --help
+    - ndschans --help
 
 about:
   home: https://git.ligo.org/cds/ndscope
