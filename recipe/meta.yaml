@@ -1,5 +1,5 @@
 {% set name = "ndscope" %}
-{% set version = "0.14.4" %}
+{% set version = "0.15.0" %}
 
 package:
   name: ndscope
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 80a4c8938f1d5e839ed93c6948f86a9991914d2ac58ba2b4281ed9b554d39d7f
+  sha256: 8d29922bf630aad4b5c4e38752efd09a2940deabfa10cf3435e57eb6fe23e3d4
 
 build:
   entry_points:
     - ndscope = ndscope.__main__:main
     - ndschans = ndscope.channel_select:main
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
