@@ -13,9 +13,9 @@ build:
   entry_points:
     - ndscope = ndscope.__main__:main
     - ndschans = ndscope.channel_select:main
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -34,7 +34,6 @@ requirements:
     - python-dateutil
     - python-nds2-client
     - pyyaml
-    - pyqt >=5
     - qtpy
     - setproctitle
 
