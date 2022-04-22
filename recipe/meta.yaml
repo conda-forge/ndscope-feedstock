@@ -40,6 +40,7 @@ requirements:
 test:
   requires:
     - pip
+    - pyqt
     - pytest
   imports:
     - ndscope
