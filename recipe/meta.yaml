@@ -2,7 +2,7 @@
 {% set version = "0.15.1" %}
 
 package:
-  name: ndscope
+  name: ndscope-base
   version: {{ version }}
 
 source:
@@ -40,15 +40,31 @@ requirements:
 test:
   requires:
     - pip
-    - pyqt
-    - pytest
-  imports:
-    - ndscope
   commands:
-    - pip check
-    - python -m pytest --pyargs ndscope
-    - ndscope --help
-    - ndschans --help
+    # check requirements
+    - python -m pip check
+
+outputs:
+  - name: ndscope-base
+  - name: ndscope
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python >=3.7
+      run:
+        - python >=3.7
+        - {{ pin_subpackage('ndscope-base', max_pin='x.x.x.x') }}
+        - pyqt
+    test:
+      requires:
+        - pytest
+      commands:
+        # run test suite
+        - python -m pytest --pyargs ndscope
+        # check entry points
+        - ndscope --help
+        - ndschans --help
 
 about:
   home: https://git.ligo.org/cds/ndscope
@@ -69,6 +85,7 @@ about:
       LIGO/Kagra control rooms as well as anywhere else in the world
 
 extra:
+  feedstock-name: ndscope
   recipe-maintainers:
     - duncanmmacleod
     - jrollins
