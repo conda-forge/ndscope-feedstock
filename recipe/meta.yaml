@@ -59,6 +59,7 @@ outputs:
     test:
       requires:
         - pytest
+        - setuptools
       commands:
         # run test suite
         - python -m pytest --pyargs ndscope
