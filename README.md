@@ -41,6 +41,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ndscope-green.svg)](https://anaconda.org/conda-forge/ndscope) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ndscope.svg)](https://anaconda.org/conda-forge/ndscope) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ndscope.svg)](https://anaconda.org/conda-forge/ndscope) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ndscope.svg)](https://anaconda.org/conda-forge/ndscope) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ndscope--base-green.svg)](https://anaconda.org/conda-forge/ndscope-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ndscope-base.svg)](https://anaconda.org/conda-forge/ndscope-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ndscope-base.svg)](https://anaconda.org/conda-forge/ndscope-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ndscope-base.svg)](https://anaconda.org/conda-forge/ndscope-base) |
 
 Installing ndscope
 ==================
@@ -52,16 +53,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `ndscope` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `ndscope, ndscope-base` can be installed with `conda`:
 
 ```
-conda install ndscope
+conda install ndscope ndscope-base
 ```
 
 or with `mamba`:
 
 ```
-mamba install ndscope
+mamba install ndscope ndscope-base
 ```
 
 It is possible to list all of the versions of `ndscope` available on your platform with `conda`:
