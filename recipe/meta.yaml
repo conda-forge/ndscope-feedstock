@@ -13,7 +13,7 @@ build:
   entry_points:
     - ndscope = ndscope.__main__:main
     - ndschans = ndscope.channel_select:main
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
@@ -42,6 +42,7 @@ test:
   requires:
     - pip
     - pytest
+    - pytest-console-scripts
   imports:
     - ndscope
   commands:
