@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 11a32b27f3d260fdc86e5a89c90756a3690b18da637a9bccd785e7d296bf88a7
 
 build:
   entry_points:
     - ndscope = ndscope.__main__:main
     - ndschans = ndscope.channel_select:main
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
     - setuptools-scm
   run:
@@ -30,7 +30,7 @@ requirements:
     - matplotlib-base
     - numpy
     - pyqtgraph
-    - python >=3.7
+    - python >={{ python_min }}
     - python-dateutil
     - python-nds2-client
     - pyyaml
@@ -43,6 +43,7 @@ test:
     - pip
     - pytest
     - pytest-console-scripts
+    - python {{ python_min }}
   imports:
     - ndscope
   commands:
