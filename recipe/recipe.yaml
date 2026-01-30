@@ -1,0 +1,85 @@
+schema_version: 1
+
+context:
+  name: "ndscope"
+  version: "0.20.5"
+
+package:
+  name: ${{ name }} 
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: d8545589283dde3409662ce79eefa85f1b903ae122e4a6a387178086f77c85ed 
+
+build:
+  python:
+    entry_points:
+      - ndscope = ndscope.__main__:main
+      - ndschans = ndscope.channel_select:main
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+
+requirements:
+  host:
+    - pip
+    - python ==${{ python_min }}
+    - setuptools
+    - setuptools-scm
+  run:
+    - cairosvg
+    - dttlib
+    - gpstime
+    - h5py
+    - matplotlib-base
+    - numpy
+    - pyqtgraph
+    - python >=${{ python_min }}
+    - python-dateutil
+    - pyyaml
+    - pyqt >=5
+    - qtpy
+    - rapidfuzz
+    - scipy
+    - setproctitle
+    - setuptools-scm
+
+tests:
+  - requirements:
+      run:
+        - pip
+        - pytest
+        - pytest-console-scripts
+        - python ${{ python_min }}
+          # imports:
+          #   - ndscope
+    script:
+      - pip check
+      - python -m pytest --pyargs ndscope
+      - ndscope --help
+      - ndschans --help
+
+about:
+  homepage: https://git.ligo.org/cds/ndscope
+  repository: https://git.ligo.org/cds/ndscope
+  license: GPL-3.0-or-later
+  license_family: GPL
+  license_file: COPYING
+  summary: Next-generation NDS oscilloscope
+  description: |
+    View time series data of channels from LIGO network data servers
+    (NDS) with an intuitive GUI interface.  Features include:
+    * online and offline data viewing
+    * intuitive mouse gestures for pan and zoom
+    * auto-retrieval of new data as the time range expands
+    * auto-switching from raw data to second/minute trends depending
+      on time scale
+    * supports both NDS1 and NDS2 protocols, for viewing both in
+      LIGO/Kagra control rooms as well as anywhere else in the world
+
+extra:
+  recipe-maintainers:
+    - duncanmmacleod
+    - jrollins
+    - evonreis
