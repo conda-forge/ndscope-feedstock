@@ -2,15 +2,15 @@ schema_version: 1
 
 context:
   name: "ndscope"
-  version: "0.20.5"
+  version: "0.20.6"
 
 package:
-  name: ${{ name }} 
+  name: ${{ name }}
   version: ${{ version }}
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: d8545589283dde3409662ce79eefa85f1b903ae122e4a6a387178086f77c85ed 
+  sha256: cf1ca13238861275f6e6e891b2f9a94d48c56a831a0c6cc7a23ec10ae24e7190
 
 build:
   python:
