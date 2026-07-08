@@ -29,7 +29,7 @@ requirements:
     - setuptools-scm
   run:
     - cairosvg
-    - dttlib >= 0.10.8
+    - dttlib >=0.10.8
     - gpstime
     - h5py
     - matplotlib-base
