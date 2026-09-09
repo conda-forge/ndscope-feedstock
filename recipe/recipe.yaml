@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: "ndscope"
-  version: "0.22.0"
+  version: "0.22.3"
 
 package:
   name: ${{ name }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 60ff7d90c697f8ad3aa0458f03ea02263cd080cd2d79d403e836a8346cc4ab39
+  sha256: b709f611cdd88b007e286c34b0981721fddfe623883f9d733b549f8fbde06050
 
 build:
   python:
@@ -44,6 +44,7 @@ requirements:
     - scipy
     - setproctitle
     - setuptools-scm
+    - tomlkit
 
 tests:
   - requirements:
