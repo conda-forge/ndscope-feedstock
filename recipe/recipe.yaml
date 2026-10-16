@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: "ndscope"
-  version: "0.22.3"
+  version: "0.22.5"
 
 package:
   name: ${{ name }}
@@ -10,14 +10,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: b709f611cdd88b007e286c34b0981721fddfe623883f9d733b549f8fbde06050
+  sha256: 6b2fd6d7104e08cf2b0bca8b41c43f91c6d9ed48a4f81ff1f95f9965bafbadcd 
 
 build:
   python:
     entry_points:
       - ndscope = ndscope.__main__:main
       - ndschans = ndscope.channel_select:main
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
@@ -29,7 +29,7 @@ requirements:
     - setuptools-scm
   run:
     - cairosvg
-    - dttlib >=0.11.3, <12.0.0
+    - dttlib >=0.12.5, <13.0.0
     - gpstime
     - h5py
     - matplotlib-base
